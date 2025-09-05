@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EST生存分析模型预测系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>EST生存分析模型预测系统</h1>
+            <p class="subtitle">基于Extra Survival Trees的生存风险评估</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>患者数据输入</h2>
+                <form id="prediction-form">
+                    <div class="form-grid">
+                        <!-- 基本生化指标 -->
+                        <div class="form-group">
+                            <label for="prediction_time">预测时间点 (天):</label>
+                            <select id="prediction_time" name="prediction_time" required>
+                                <option value="30">30天</option>
+                                <option value="60">60天</option>
+                                <option value="90">90天</option>
+                                <option value="180" selected>180天 (6个月)</option>
+                            </select>
+                            <span class="help-text">选择要预测的生存时间点</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Albumin">白蛋白 (Albumin) g/L:</label>
+                            <input type="number" id="Albumin" name="Albumin" step="0.1" min="10" max="60" required>
+                            <span class="help-text">正常范围: 35-50 g/L</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Coronary_Heart_Disease">冠心病:</label>
+                            <select id="Coronary_Heart_Disease" name="Coronary_Heart_Disease" required>
+                                <option value="">请选择</option>
+                                <option value="0">无</option>
+                                <option value="1">有</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Hemoglobin">血红蛋白 (Hemoglobin) g/L:</label>
+                            <input type="number" id="Hemoglobin" name="Hemoglobin" step="1" min="50" max="200" required>
+                            <span class="help-text">正常范围: 120-160 g/L</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Intracerebral_Hemorrhage">脑出血:</label>
+                            <select id="Intracerebral_Hemorrhage" name="Intracerebral_Hemorrhage" required>
+                                <option value="">请选择</option>
+                                <option value="0">无</option>
+                                <option value="1">有</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="NYHA_Classification">NYHA心功能分级:</label>
+                            <select id="NYHA_Classification" name="NYHA_Classification" required>
+                                <option value="">请选择</option>
+                                <option value="1">I级</option>
+                                <option value="2">II级</option>
+                                <option value="3">III级</option>
+                                <option value="4">IV级</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Septic_Shock">感染性休克:</label>
+                            <select id="Septic_Shock" name="Septic_Shock" required>
+                                <option value="">请选择</option>
+                                <option value="0">无</option>
+                                <option value="1">有</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Severe_valve_regurgitationn">重度瓣膜反流:</label>
+                            <select id="Severe_valve_regurgitationn" name="Severe_valve_regurgitationn" required>
+                                <option value="">请选择</option>
+                                <option value="0">无</option>
+                                <option value="1">有</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Surgery">手术治疗:</label>
+                            <select id="Surgery" name="Surgery" required>
+                                <option value="">请选择</option>
+                                <option value="0">无</option>
+                                <option value="1">有</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="neutrophil_percentage">中性粒细胞百分比 (%):</label>
+                            <input type="number" id="neutrophil_percentage" name="neutrophil_percentage" step="0.1" min="0" max="100" required>
+                            <span class="help-text">正常范围: 50-70%</span>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">开始预测</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">重置表单</button>
+                        <button type="button" class="btn btn-info" onclick="loadSampleData()">加载示例数据</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="result-section" id="result-section" style="display: none;">
+                <h2>预测结果</h2>
+                <div class="result-content">
+                    <div class="result-card">
+                        <h3>风险评分</h3>
+                        <div class="risk-score" id="risk-score">--</div>
+                        <div class="risk-level" id="risk-level">--</div>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>生存概率</h3>
+                        <div class="survival-prob" id="survival-prob">--</div>
+                        <div class="survival-time" id="survival-time">--</div>
+                    </div>
+
+                    <div class="result-card full-width">
+                        <h3>生存曲线</h3>
+                        <canvas id="survival-chart" width="400" height="200"></canvas>
+                    </div>
+
+                    <div class="result-card full-width">
+                        <h3>特征重要性</h3>
+                        <canvas id="importance-chart" width="400" height="200"></canvas>
+                    </div>
+
+                    <div class="result-card full-width" id="time-probabilities" style="display: none;">
+                        <!-- 各时间点生存概率将在这里显示 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 EST生存分析模型预测系统. 仅供医学研究参考使用.</p>
+        </footer>
+    </div>
+
+    <div id="loading" class="loading" style="display: none;">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>正在进行预测分析，请稍候...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

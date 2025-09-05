@@ -1,0 +1,23 @@
+# Render部署配置 - 修复setuptools.build_meta兼容性问题
+services:
+  - type: web
+    name: est-survival-web-app
+    env: python
+    plan: free
+    # 指定Python版本为3.11.9以解决setuptools兼容性问题
+    runtime: python-3.11.9
+    buildCommand: |
+      python -m pip install --upgrade pip>=23.0.0
+      python -m pip install --upgrade setuptools>=68.0.0 wheel>=0.40.0
+      pip install -r requirements-minimal.txt
+    startCommand: python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PORT
+        value: 10000
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHONUNBUFFERED
+        value: 1
+    healthCheckPath: /

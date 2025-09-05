@@ -1,0 +1,82 @@
+2025-09-02 13:18:44,075 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-02 13:18:44,076 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-02 13:18:44,082 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-02 13:18:44,083 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-02 13:18:44,083 - __main__ - INFO - 模型加载成功，启动Web服务器
+2025-09-02 13:18:44,118 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.9.130:5000
+2025-09-02 13:18:44,119 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-02 13:18:44,130 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-02 13:18:46,042 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-02 13:18:46,043 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-02 13:18:46,050 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-02 13:18:46,051 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-02 13:18:46,051 - __main__ - INFO - 模型加载成功，启动Web服务器
+2025-09-02 13:18:46,065 - werkzeug - WARNING -  * Debugger is active!
+2025-09-02 13:18:46,072 - werkzeug - INFO -  * Debugger PIN: 112-792-454
+2025-09-02 13:33:10,679 - werkzeug - INFO -  * Detected change in 'C:\\Users\\ZhuanZ.DESKTOP-PH97BKO\\Documents\\est_survival_web_app\\app.py', reloading
+2025-09-02 13:33:10,680 - werkzeug - INFO -  * Detected change in 'C:\\Users\\ZhuanZ.DESKTOP-PH97BKO\\Documents\\est_survival_web_app\\app.py', reloading
+2025-09-02 13:33:10,764 - werkzeug - INFO -  * Detected change in 'C:\\Users\\ZhuanZ.DESKTOP-PH97BKO\\Documents\\est_survival_web_app\\app.py', reloading
+2025-09-02 13:33:10,765 - werkzeug - INFO -  * Detected change in 'C:\\Users\\ZhuanZ.DESKTOP-PH97BKO\\Documents\\est_survival_web_app\\app.py', reloading
+2025-09-02 13:33:11,207 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-02 13:33:13,137 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-02 13:33:13,137 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-02 13:33:13,145 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-02 13:33:13,145 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-02 13:33:13,145 - __main__ - INFO - 模型加载成功，启动Web服务器
+2025-09-02 22:32:20,019 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-02 22:32:20,019 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-02 22:32:20,039 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-02 22:32:20,039 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-02 22:32:20,039 - __main__ - INFO - 模型加载成功，启动Web服务器
+2025-09-02 22:32:20,067 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.239:5000
+2025-09-02 22:32:20,068 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-02 22:32:30,678 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2025 22:32:30] "GET /?ide_webview_request_time=1756823550619 HTTP/1.1" 200 -
+2025-09-02 22:32:31,563 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2025 22:32:31] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-09-02 22:32:31,566 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2025 22:32:31] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-02 22:32:31,713 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2025 22:32:31] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-09-05 14:44:07,419 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-05 14:44:07,420 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-05 14:44:07,434 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-05 14:44:07,434 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-05 14:44:07,434 - __main__ - INFO - 模型加载成功
+2025-09-05 14:44:07,436 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-05 14:44:07,436 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-05 14:44:07,446 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-05 14:44:07,446 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-05 14:44:07,446 - __main__ - INFO - 模型加载成功，启动Web服务器
+2025-09-05 14:44:07,474 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.239:5000
+2025-09-05 14:44:07,475 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 14:44:20,035 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:44:20] "GET /?ide_webview_request_time=1757054658556 HTTP/1.1" 200 -
+2025-09-05 14:44:20,157 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:44:20] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-05 14:44:20,160 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:44:20] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-09-05 14:44:20,829 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:44:20] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-09-05 14:45:55,996 - __main__ - INFO - 预测完成，风险评分: 13.478，180天生存概率: 0.540
+2025-09-05 14:45:55,998 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:45:55] "POST /api/predict HTTP/1.1" 200 -
+2025-09-05 14:46:07,246 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-05 14:46:07,246 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-05 14:46:07,261 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-05 14:46:07,262 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-05 14:46:07,262 - __main__ - INFO - 模型加载成功
+2025-09-05 14:46:07,263 - __main__ - INFO - 启动EST生存分析Web应用...
+2025-09-05 14:46:07,264 - __main__ - INFO - 尝试从 ./est_model.pkl 加载模型...
+2025-09-05 14:46:07,275 - __main__ - INFO - 从字典格式中提取模型对象
+2025-09-05 14:46:07,275 - __main__ - INFO - 成功从 ./est_model.pkl 加载模型
+2025-09-05 14:46:07,276 - __main__ - INFO - 模型加载成功，启动Web服务器
+2025-09-05 14:46:07,293 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.239:5000
+2025-09-05 14:46:07,295 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 14:46:13,334 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:46:13] "GET /?ide_webview_request_time=1757054773264 HTTP/1.1" 200 -
+2025-09-05 14:46:13,455 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:46:13] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-05 14:46:13,459 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:46:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-05 14:46:13,488 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 14:46:13] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
